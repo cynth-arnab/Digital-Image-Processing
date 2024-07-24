@@ -1,0 +1,26 @@
+img_O = imread("harrypotter-zhy07w95yi5c1.jpg");
+imshow(img_O);
+filter_size = 7;
+average_filter = ones(filter_size)/ (filter_size^2);
+filt_img = imfilter(img_O,average_filter,"replicate");
+filt_img2 = uint8(filt_img);
+subplot(2,2,1);
+imshow(img_O);
+title('original');
+subplot(2,2,2);
+imshow(filt_img2);
+title('average filter');
+%% 
+pic = imread("harrypotter-zhy07w95yi5c1.jpg");
+imshow(pic);
+graypic = rgb2gray(pic);
+filter_size = 5;
+ordered_filter = ones(filter_size);
+filtered_image = ordfilt2(graypic, round(filter_size^2/2),ordered_filter);
+filtered_image = uint8(filtered_image);
+subplot(2,2,3);
+imshow(pic);
+title('original');
+subplot(2,2,4);
+imshow(filtered_image);
+title('order statistics filter');
