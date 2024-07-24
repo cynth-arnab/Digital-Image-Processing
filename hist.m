@@ -1,0 +1,47 @@
+hb = imread('hb.png');
+subplot(4,2,1);
+imshow(hb);
+title("High Brightness");
+histogram = imhist(hb);
+subplot(4,2,2);
+imshow(histogram);
+bar(histogram);
+title('Histogram');
+xlabel('Pixel Intensity');
+ylabel('Count');
+%% 
+lb = imread('lb.png');
+subplot(4,2,3);
+imshow(lb);
+title("Low Brightness");
+histogram2 = imhist(lb);
+subplot(4,2,4);
+imshow(histogram2);
+bar(histogram2);
+title('Histogram');
+xlabel('Pixel Intensity');
+ylabel('Count');
+%% 
+lc = imread('lc.png');
+subplot(2,4,5);
+imshow(lc);
+title("Low Contrast");
+histogram3 = imhist(lc);
+subplot(2,4,6);
+imshow(histogram3);
+bar(histogram3);
+title('Histogram');
+xlabel('Pixel Intensity');
+ylabel('Count');
+%% 
+hc = imread('hc.png');
+subplot(2,4,7);
+imshow(hc);
+title("High Contrast");
+histogram4 = imhist(hc);
+subplot(2,4,8);
+imshow(histogram4);
+bar(histogram4);
+title('Histogram');
+xlabel('Pixel Intensity');
+ylabel('Count');
